@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: monolith
+    name: order
 ---
 
 spring:
@@ -29,11 +29,15 @@ spring:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
       bindings:
         event-in:
-          group: monolith
+          group: order
+#<<< EDA / Topic Name
           destination: labshopmonolith
+#>>> EDA / Topic Name
           contentType: application/json
         event-out:
+#<<< EDA / Topic Name
           destination: labshopmonolith
+#>>> EDA / Topic Name
           contentType: application/json
 
 logging:
@@ -74,7 +78,7 @@ spring:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
       bindings:
         event-in:
-          group: monolith
+          group: order
           destination: labshopmonolith
           contentType: application/json
         event-out:
